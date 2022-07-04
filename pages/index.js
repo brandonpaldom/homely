@@ -13,8 +13,8 @@ export default function Home({ data }) {
 
       <div>
         <Hero />
-        <Features />
         <LatestProperties data={data} />
+        <Features />
       </div>
     </>
   );
