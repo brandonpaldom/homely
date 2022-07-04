@@ -1,0 +1,15 @@
+@value primary-color, primary-color-50 from '../styles/colors.css';
+
+.button {
+  background-color: primary-color;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px primary-color-50, 0 4px 6px -4px primary-color-50;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  width: max-content;
+}
+
+.center {
+  align-self: center;
+}

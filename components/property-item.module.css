@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  gap: 1rem;
+}
+
+.image-container {
+  aspect-ratio: 4/3;
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  border-radius: 1rem;
+}
+
+.badge {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.address {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.badges {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}

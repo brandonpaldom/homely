@@ -1,0 +1,30 @@
+@value primary-color from '../styles/colors.css';
+
+.container {
+  width: 100vw;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.image-container {
+  max-width: 768px;
+}
+
+.image {
+  border-radius: 1rem;
+}
+
+.link {
+  color: primary-color;
+  font-weight: 500;
+}

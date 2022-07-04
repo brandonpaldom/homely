@@ -1,0 +1,142 @@
+@value primary-color, neutral-100, neutral-200, neutral-500, neutral-700 from '../styles/colors.css';
+
+.container {
+  background-color: white;
+  border-top: 1px solid neutral-100;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 2rem 1rem;
+}
+
+.link {
+  color: primary-color;
+  font-weight: 500;
+}
+
+.logo {
+  cursor: pointer;
+  height: 34px;
+  position: relative;
+  width: 116px;
+}
+
+.top-section {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  cursor: pointer;
+  font-weight: 500;
+  transition-duration: 300ms;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover {
+  color: #ff6c2f;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.bottom-section {
+  color: neutral-500;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  gap: 1rem;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+.input[type='email'] {
+  background-color: neutral-100;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: neutral-500;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button {
+  background-color: neutral-100;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: neutral-700;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition-duration: 300ms;
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  width: max-content;
+}
+
+.button:hover {
+  background-color: neutral-200;
+}
+
+@media (min-width: 640px) {
+  .top-section {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .newsletter {
+    grid-column: span 2 / span 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .bottom-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .top-section {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .newsletter {
+    grid-column: span 1 / span 1;
+  }
+}

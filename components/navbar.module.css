@@ -1,0 +1,76 @@
+@value primary-color, neutral-100, neutral-700 from '../styles/colors.css';
+
+.container {
+  background-color: white;
+  border-bottom: 1px solid neutral-100;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 4rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 0 1rem;
+}
+
+.menu-icon {
+  height: 1.5rem;
+  position: relative;
+  width: 1.5rem;
+}
+
+.nav {
+  display: none;
+}
+
+.nav-item {
+  font-weight: 500;
+  transition-duration: 300ms;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover {
+  color: primary-color;
+}
+
+.mobile-nav {
+  background-color: white;
+  color: neutral-700;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  position: absolute;
+  right: 0;
+  top: 4rem;
+  width: 75%;
+  z-index: 10;
+}
+
+.mobile-nav-item {
+  padding: 1rem;
+}
+
+.mobile-nav-item:not(:last-child) {
+  border-bottom: 1px solid neutral-100;
+}
+
+.mobile-nav-item:hover {
+  background-color: primary-color;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,9 @@
+@value neutral-700 from '../styles/colors.css';
+
+.paragraph {
+  color: neutral-700;
+}
+
+.lg {
+  font-size: 1.125rem;
+}
