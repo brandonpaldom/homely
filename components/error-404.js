@@ -1,7 +1,6 @@
-import error404 from '@/public/404.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from './Button';
+import Button from './button';
 import styles from './error-404.module.css';
 import Paragraph from './paragraph';
 import Title from './title';
@@ -20,7 +19,12 @@ export default function Error404() {
         </Paragraph>
         <Button href="/properties">Explorar propiedades</Button>
         <div className={styles['image-container']}>
-          <Image src={error404} alt="" className={styles.image} />
+          <Image
+            src={'/404.jpg'}
+            alt=""
+            layout="fill"
+            className={styles.image}
+          />
         </div>
       </div>
     </div>

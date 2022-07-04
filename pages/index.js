@@ -1,4 +1,4 @@
-import Feature from '@/components/features';
+import Features from '@/components/features';
 import Hero from '@/components/hero';
 import LatestProperties from '@/components/latest-properties';
 import Head from 'next/head';
@@ -13,7 +13,7 @@ export default function Home({ data }) {
 
       <div>
         <Hero />
-        <Feature />
+        <Features />
         <LatestProperties data={data} />
       </div>
     </>

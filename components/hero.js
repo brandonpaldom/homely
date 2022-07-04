@@ -1,7 +1,6 @@
-import hero from '@/public/hero.jpg';
-import styles from './hero.module.css';
 import Image from 'next/image';
 import Button from './button';
+import styles from './hero.module.css';
 import Paragraph from './paragraph';
 import Title from './title';
 
@@ -20,7 +19,12 @@ export default function Hero() {
           </Button>
         </div>
         <div className={styles['image-container']}>
-          <Image src={hero} alt="" className={styles.image} />
+          <Image
+            src={'/hero.jpg'}
+            alt=""
+            layout="fill"
+            className={styles.image}
+          />
         </div>
       </div>
     </div>
