@@ -1,7 +1,11 @@
 import PropertyItem from './property-item';
 import styles from './property-listing.module.css';
 
-export default function PropertyListing({ data }) {
+export default function PropertyListing({ data, error, isLoading }) {
+  if (isLoading) return <p>Loading...</p>;
+  if (!data) return <p>No profile data</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div className={styles.grid}>
       {data.map((property) => (

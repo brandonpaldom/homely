@@ -1,9 +1,12 @@
 import Features from '@/components/features';
 import Hero from '@/components/hero';
 import LatestProperties from '@/components/latest-properties';
+import { useFetch } from 'hooks/useFetch';
 import Head from 'next/head';
 
-export default function Home({ data }) {
+export default function Home() {
+  const { data, error, isLoading } = useFetch('/api/latest');
+
   return (
     <>
       <Head>
@@ -13,20 +16,9 @@ export default function Home({ data }) {
 
       <div>
         <Hero />
-        <LatestProperties data={data} />
+        <LatestProperties data={data} error={error} isLoading={isLoading} />
         <Features />
       </div>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_URL}/api/latest`);
-  const data = await res.json();
-
-  return {
-    props: {
-      data,
-    },
-  };
 }
