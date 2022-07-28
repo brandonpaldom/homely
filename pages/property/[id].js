@@ -41,25 +41,3 @@ export default function Property({ paramsId }) {
 export const getServerSideProps = async (context) => {
   return { props: { paramsId: context.params.id } };
 };
-
-// export async function getStaticPaths() {
-//   const res = await fetch(`${process.env.API_URL}/api/properties`);
-//   const data = await res.json();
-
-//   const paths = data.map((property) => ({
-//     params: { id: property.id },
-//   }));
-
-//   return { paths, fallback: false };
-// }
-
-// export async function getStaticProps({ params }) {
-//   const res = await fetch(`${process.env.API_URL}/api/property/${params.id}`);
-//   const data = await res.json();
-
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
