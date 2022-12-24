@@ -81,12 +81,7 @@ export default function Footer() {
           <div>
             <p>
               Creado por{' '}
-              <a
-                href="https://brandonpalmeros.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.link}
-              >
+              <a href="https://brandonpalmeros.dev/" className={styles.link}>
                 Brandon Palmeros
               </a>
             </p>
