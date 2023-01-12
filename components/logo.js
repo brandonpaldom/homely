@@ -7,7 +7,7 @@ export default function Logo() {
   return (
     <Link href="/">
       <div className={styles.logo}>
-        <Image src={logo} alt="" layout="fill" />
+        <Image src={logo} alt="" fill />
       </div>
     </Link>
   );

@@ -42,19 +42,15 @@ export default function Footer() {
           </div>
           <div className={styles.nav}>
             {purposes.map(({ title, path }) => (
-              <Link key={path} href={path}>
-                <span>
-                  <a className={styles['nav-item']}>{title}</a>
-                </span>
+              <Link key={path} href={path} className={styles['nav-item']}>
+                {title}
               </Link>
             ))}
           </div>
           <div className={styles.nav}>
             {types.map(({ title, path }) => (
-              <Link key={path} href={path}>
-                <span>
-                  <a className={styles['nav-item']}>{title}</a>
-                </span>
+              <Link key={path} href={path} className={styles['nav-item']}>
+                {title}
               </Link>
             ))}
           </div>

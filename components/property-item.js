@@ -39,43 +39,42 @@ export default function PropertyItem({ property }) {
   };
 
   return (
-    <Link href={`/property/${property.id}`}>
-      <a className={styles.container}>
-        <div className={styles['image-container']}>
-          <Image
-            src={images[0]}
-            alt=""
-            layout="fill"
-            className={styles.image}
-          />
-          <div className={styles.badge}>
-            <Badge secondary>{translatedType(type)}</Badge>
+    <Link href={`/property/${property.id}`} className={styles.container}>
+      <div className={styles['image-container']}>
+        <Image
+          src={images[0]}
+          alt=""
+          className={styles.image}
+          width={960}
+          height={720}
+          priority
+        />
+        <div className={styles.badge}>
+          <Badge secondary>{translatedType(type)}</Badge>
+        </div>
+      </div>
+      <div className={styles['info-container']}>
+        <div className={styles['title-container']}>
+          <h3 className={styles.title}>{title}</h3>
+          <Badge primary>{translatedStatus(status)}</Badge>
+        </div>
+        <div className={styles['data-container']}>
+          <div>
+            <p className={styles.address}>{address}</p>
+            <p className={styles.price}>Desde ${price} MXN</p>
+          </div>
+          <div className={styles.badges}>
+            <Badge secondary>Desde</Badge>
+            <Badge secondary>{area} m²</Badge>
+            {bedrooms && <Badge secondary>{bedrooms} rec.</Badge>}
+            {bathrooms && (
+              <Badge secondary>
+                {`${bathrooms} ${bathrooms < 2 ? 'baño' : 'baños'}`}
+              </Badge>
+            )}
           </div>
         </div>
-
-        <div className={styles['info-container']}>
-          <div className={styles['title-container']}>
-            <h3 className={styles.title}>{title}</h3>
-            <Badge primary>{translatedStatus(status)}</Badge>
-          </div>
-          <div className={styles['data-container']}>
-            <div>
-              <p className={styles.address}>{address}</p>
-              <p className={styles.price}>Desde ${price} MXN</p>
-            </div>
-            <div className={styles.badges}>
-              <Badge secondary>Desde</Badge>
-              <Badge secondary>{area} m²</Badge>
-              {bedrooms && <Badge secondary>{bedrooms} rec.</Badge>}
-              {bathrooms && (
-                <Badge secondary>
-                  {`${bathrooms} ${bathrooms < 2 ? 'baño' : 'baños'}`}
-                </Badge>
-              )}
-            </div>
-          </div>
-        </div>
-      </a>
+      </div>
     </Link>
   );
 }

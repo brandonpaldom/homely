@@ -1,9 +1,14 @@
 import PropertiesContainer from '@/components/properties-container';
-import { useFetch } from 'hooks/useFetch';
 import Head from 'next/head';
+import useSWR from 'swr';
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function Rent() {
-  const { data, error, isLoading } = useFetch('/api/properties?status=rent');
+  const { data, error, isLoading } = useSWR(
+    '/api/properties?status=rent',
+    fetcher
+  );
 
   return (
     <>

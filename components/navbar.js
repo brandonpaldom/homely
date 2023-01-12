@@ -45,13 +45,13 @@ export default function Navbar() {
           <Logo />
 
           <div onClick={handleOpen} className={styles['menu-icon']}>
-            <Image src={menuIcon} alt="" layout="fill" />
+            <Image src={menuIcon} alt="" fill />
           </div>
 
           <nav className={styles.nav}>
             {menu.map(({ title, path }) => (
-              <Link key={path} href={path}>
-                <a className={styles['nav-item']}>{title}</a>
+              <Link key={path} href={path} className={styles['nav-item']}>
+                {title}
               </Link>
             ))}
           </nav>
@@ -61,10 +61,13 @@ export default function Navbar() {
       {isOpen && (
         <div className={styles['mobile-nav']}>
           {menu.map(({ title, path }) => (
-            <Link key={path} href={path}>
-              <a onClick={handleClose} className={styles['mobile-nav-item']}>
-                {title}
-              </a>
+            <Link
+              key={path}
+              href={path}
+              onClick={handleClose}
+              className={styles['mobile-nav-item']}
+            >
+              {title}
             </Link>
           ))}
         </div>

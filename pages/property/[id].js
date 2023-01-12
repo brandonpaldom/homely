@@ -1,30 +1,17 @@
 import PropertyInfo from '@/components/property-info';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import useSWR from 'swr';
 
-export default function Property({ paramsId }) {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [isLoading, setLoading] = useState(false);
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  useEffect(() => {
-    setLoading(true);
-    fetch(`/api/property/${paramsId}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [paramsId]);
-
-  if (!data) return <></>;
+export default function Property() {
+  const { id } = useRouter().query;
+  console.log('id', id);
+  const { data, error, isLoading } = useSWR(`/api/property/${id}`, fetcher);
+  console.log('data', data);
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
 
   return (
     <>
@@ -37,7 +24,3 @@ export default function Property({ paramsId }) {
     </>
   );
 }
-
-export const getServerSideProps = async (context) => {
-  return { props: { paramsId: context.params.id } };
-};

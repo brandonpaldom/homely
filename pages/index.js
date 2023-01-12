@@ -1,11 +1,13 @@
 import Features from '@/components/features';
 import Hero from '@/components/hero';
 import LatestProperties from '@/components/latest-properties';
-import { useFetch } from 'hooks/useFetch';
 import Head from 'next/head';
+import useSWR from 'swr';
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function Home() {
-  const { data, error, isLoading } = useFetch('/api/latest');
+  const { data, error, isLoading } = useSWR('/api/latest', fetcher);
 
   return (
     <>

@@ -16,12 +16,11 @@
   text-align: center;
 }
 
-.image-container {
-  max-width: 768px;
-}
-
 .image {
   border-radius: 1rem;
+  margin-top: 1rem;
+  max-width: 768px;
+  height: auto;
 }
 
 .link {

@@ -5,9 +5,14 @@ import styles from './property-location.module.css';
 export default function PropertyLocation({ address }) {
   return (
     <div className={styles.container}>
-      <div className={styles.icon}>
-        <Image src={pinIcon} alt="area" layout="fill" />
-      </div>
+      <Image
+        src={pinIcon}
+        alt="area"
+        className={styles.icon}
+        width={14}
+        height={14}
+      />
+
       <span>{address}</span>
     </div>
   );

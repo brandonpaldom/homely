@@ -82,24 +82,39 @@ export default function PropertyInfo({ data }) {
           <div className={styles.badges}>
             <div className={styles.badge}>Desde</div>
             <div className={styles.badge}>
-              <div className={styles.icon}>
-                <Image src={areaIcon} alt="area" layout="fill" />
-              </div>
+              <Image
+                src={areaIcon}
+                alt="area"
+                className={styles.icon}
+                width={16}
+                height={16}
+              />
+
               <span>{area} m²</span>
             </div>
             {bedrooms && (
               <div className={styles.badge}>
-                <div className={styles.icon}>
-                  <Image src={bedIcon} alt="bed" layout="fill" />
-                </div>
+                <Image
+                  src={bedIcon}
+                  alt="bed"
+                  className={styles.icon}
+                  width={16}
+                  height={16}
+                />
+
                 <span>{bedrooms} rec.</span>
               </div>
             )}
             {bathrooms && (
               <div className={styles.badge}>
-                <div className={styles.icon}>
-                  <Image src={bathIcon} alt="bath" layout="fill" />
-                </div>
+                <Image
+                  src={bathIcon}
+                  alt="bath"
+                  className={styles.icon}
+                  width={16}
+                  height={16}
+                />
+
                 <span>{`${bathrooms} ${
                   bathrooms < 2 ? 'baño' : 'baños'
                 }`}</span>
@@ -107,25 +122,37 @@ export default function PropertyInfo({ data }) {
             )}
             {parking && (
               <div className={styles.badge}>
-                <div className={styles.icon}>
-                  <Image src={parkingIcon} alt="parking" layout="fill" />
-                </div>
+                <Image
+                  src={parkingIcon}
+                  alt="parking"
+                  className={styles.icon}
+                  width={16}
+                  height={16}
+                />
+
                 <span>{parking} estac.</span>
               </div>
             )}
             {elevator && (
               <div className={styles.badge}>
-                <div className={styles.icon}>
-                  <Image src={elevatorIcon} alt="parking" layout="fill" />
-                </div>
+                <Image
+                  src={elevatorIcon}
+                  alt="parking"
+                  width={16}
+                  height={16}
+                />
+
                 <span>Elevador</span>
               </div>
             )}
             {security && (
               <div className={styles.badge}>
-                <div className={styles.icon}>
-                  <Image src={securityIcon} alt="parking" layout="fill" />
-                </div>
+                <Image
+                  src={securityIcon}
+                  alt="parking"
+                  width={16}
+                  height={16}
+                />
                 <span>Seguridad 24/7</span>
               </div>
             )}
@@ -135,39 +162,35 @@ export default function PropertyInfo({ data }) {
         <div className={styles['secondary-container']}>
           <h2 className={styles.subtitle}>Descripción</h2>
           <p className={styles.description}>
-            {description.split('\n').map((line, index) => (
-              <span key={index}>{line}</span>
-            ))}
+            {description &&
+              description
+                .split('\n')
+                .map((line, index) => <span key={index}>{line}</span>)}
           </p>
         </div>
 
         <div className={styles['secondary-container']}>
           <h2 className={styles.subtitle}>Amenidades</h2>
           <div className={styles.amenities}>
-            {amenities.map((amenity, index) => (
-              <span key={index} className={styles.amenity}>
-                {amenity}
-              </span>
-            ))}
+            {amenities &&
+              amenities.map((amenity, index) => (
+                <span key={index} className={styles.amenity}>
+                  {amenity}
+                </span>
+              ))}
           </div>
         </div>
 
         <div className={styles['secondary-container']}>
           <h2 className={styles.subtitle}>Ubicación</h2>
-          <div
-            style={{
-              width: '100%',
-              aspectRatio: '16/9',
-              position: 'relative',
-            }}
-          >
-            <Image
-              src={location}
-              alt=""
-              layout="fill"
-              style={{ borderRadius: '1rem' }}
-            />
-          </div>
+
+          <Image
+            src={location}
+            alt=""
+            width={960}
+            height={540}
+            style={{ borderRadius: '1rem', width: '100%', height: 'auto' }}
+          />
         </div>
 
         <div className={styles['secondary-container']}>

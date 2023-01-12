@@ -32,14 +32,14 @@ export default function Features() {
       <div className={styles.features}>
         {features.map(({ title, description, image }, index) => (
           <div key={index} className={styles.feature}>
-            <div className={styles['image-container']}>
-              <Image
-                src={image}
-                alt=""
-                layout="fill"
-                className={styles.image}
-              />
-            </div>
+            <Image
+              src={image}
+              alt=""
+              className={styles.image}
+              width={640}
+              height={640}
+              priority
+            />
             <h3 className={styles.subtitle}>{title}</h3>
             <Paragraph>{description}</Paragraph>
           </div>

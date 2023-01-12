@@ -24,21 +24,18 @@
   gap: 1rem;
 }
 
-.image-container {
-  aspect-ratio: 1/1;
-  position: relative;
+.image {
+  border-radius: 9999px;
+  width: 15rem;
+  height: auto;
+
   transition-duration: 300ms;
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  width: 15rem;
 }
 
-.image-container:hover {
+.image:hover {
   transform: translateY(-0.5rem);
-}
-
-.image {
-  border-radius: 9999px;
 }
 
 .subtitle {

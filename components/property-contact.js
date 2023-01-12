@@ -24,21 +24,13 @@ export default function PropertyContact({
         <PropertyLocation address={address} />
       </div>
       <p className={styles.price}>Desde ${price} MXN</p>
-      <Link href="#">
-        <a className={styles['button-contact']}>
-          <div className={styles.icon}>
-            <Image src={whatsappIcon} alt="" layout="fill" />
-          </div>
-          Contáctanos
-        </a>
+      <Link href="#" className={styles['button-contact']}>
+        <Image src={whatsappIcon} alt="" width={16} height={16} />
+        Contáctanos
       </Link>
-      <Link href="#">
-        <a className={styles['button-schedule']}>
-          <div className={styles.icon}>
-            <Image src={calendarIcon} alt="" layout="fill" />
-          </div>
-          Agendar visita
-        </a>
+      <Link href="#" className={styles['button-schedule']}>
+        <Image src={calendarIcon} alt="" width={16} height={16} />
+        Agendar visita
       </Link>
     </div>
   );

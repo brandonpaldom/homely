@@ -18,14 +18,14 @@ export default function Hero() {
             Descubre propiedades
           </Button>
         </div>
-        <div className={styles['image-container']}>
-          <Image
-            src={'/hero.jpg'}
-            alt=""
-            layout="fill"
-            className={styles.image}
-          />
-        </div>
+        <Image
+          src={'/hero.jpg'}
+          alt=""
+          className={styles.image}
+          width={960}
+          height={720}
+          priority
+        />
       </div>
     </div>
   );

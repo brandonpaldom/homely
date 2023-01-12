@@ -20,14 +20,10 @@
   padding: 2rem 0;
 }
 
-.image-container {
-  aspect-ratio: 4/3;
-  position: relative;
-  width: 100%;
-}
-
 .image {
   border-radius: 1rem;
+  width: 100%;
+  height: auto;
 }
 
 @media (min-width: 768px) {
