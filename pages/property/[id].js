@@ -7,9 +7,8 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 export default function Property() {
   const { id } = useRouter().query;
-  console.log('id', id);
   const { data, error, isLoading } = useSWR(`/api/property/${id}`, fetcher);
-  console.log('data', data);
+
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
