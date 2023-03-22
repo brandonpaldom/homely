@@ -81,7 +81,7 @@ export default function Footer() {
                 href="https://brandonpalmeros.dev/"
                 className={styles.link}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 Brandon Palmeros
               </a>
