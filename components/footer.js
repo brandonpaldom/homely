@@ -1,34 +1,34 @@
-import styles from './footer.module.css';
-import Link from 'next/link';
-import Logo from './logo';
+import styles from "./footer.module.css";
+import Link from "next/link";
+import Logo from "./logo";
 
 const purposes = [
   {
-    title: 'Propiedades',
-    path: '/properties',
+    title: "Propiedades",
+    path: "/properties",
   },
   {
-    title: 'Venta',
-    path: '/sale',
+    title: "Venta",
+    path: "/sale",
   },
   {
-    title: 'Renta',
-    path: '/rent',
+    title: "Renta",
+    path: "/rent",
   },
 ];
 
 const types = [
   {
-    title: 'Departamentos',
-    path: '/departments',
+    title: "Departamentos",
+    path: "/departments",
   },
   {
-    title: 'Casas',
-    path: '/houses',
+    title: "Casas",
+    path: "/houses",
   },
   {
-    title: 'Oficinas',
-    path: '/offices',
+    title: "Oficinas",
+    path: "/offices",
   },
 ];
 
@@ -36,20 +36,20 @@ export default function Footer() {
   return (
     <footer className={styles.container}>
       <div className={styles.footer}>
-        <div className={styles['top-section']}>
+        <div className={styles["top-section"]}>
           <div className={styles.nav}>
             <Logo />
           </div>
           <div className={styles.nav}>
             {purposes.map(({ title, path }) => (
-              <Link key={path} href={path} className={styles['nav-item']}>
+              <Link key={path} href={path} className={styles["nav-item"]}>
                 {title}
               </Link>
             ))}
           </div>
           <div className={styles.nav}>
             {types.map(({ title, path }) => (
-              <Link key={path} href={path} className={styles['nav-item']}>
+              <Link key={path} href={path} className={styles["nav-item"]}>
                 {title}
               </Link>
             ))}
@@ -67,7 +67,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={styles['bottom-section']}>
+        <div className={styles["bottom-section"]}>
           <div>
             <p>
               © {new Date().getFullYear()} Homely. Todos los derechos
@@ -76,8 +76,13 @@ export default function Footer() {
           </div>
           <div>
             <p>
-              Creado por{' '}
-              <a href="https://brandonpalmeros.dev/" className={styles.link}>
+              Creado por{" "}
+              <a
+                href="https://brandonpalmeros.dev/"
+                className={styles.link}
+                target="_blank"
+                rel="noopener"
+              >
                 Brandon Palmeros
               </a>
             </p>
